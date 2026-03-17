@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Member Access | DRIVE</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/login.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+<section class="login-wrapper">
+
+  <div class="login-card">
+
+    <span class="brand">DRIVE</span>
+
+    <h1>Member Access</h1>
+    <p class="subtitle">
+      Access your account to continue your journey
+    </p>
+
+    <!-- SWITCH -->
+    <div class="switch">
+      <button class="switch-btn active" data-tab="login">Sign In</button>
+      <button class="switch-btn" data-tab="register">Register</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form id="loginForm" class="form active">
+      <input type="text" id="loginEmail" placeholder="Email or Phone">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button type="submit">Enter</button>
+    </form>
+
+    <!-- GOOGLE SIGN-IN -->
+    <div class="or-divider"><span>or</span></div>
+    <div id="googleSignInContainer"></div>
+
+    <!-- REGISTER -->
+    <form id="registerForm" class="form">
+      <input type="text" id="regName" placeholder="Full Name">
+      <input type="text" id="regEmail" placeholder="Email or Phone">
+      <input type="password" id="regPassword" placeholder="Password">
+      <button type="submit">Create Account</button>
+    </form>
+
+  </div>
+
+</section>
+
+<!-- TOAST POPUP -->
+<div id="toast" class="toast" aria-live="polite" aria-atomic="true">
+  <div class="toast-content">
+    <div class="toast-icon" id="toastIcon">!</div>
+    <div class="toast-text">
+      <div class="toast-title" id="toastTitle">Notice</div>
+      <div class="toast-message" id="toastMessage"></div>
+    </div>
+    <button class="toast-close" id="toastClose" type="button" aria-label="Close">✕</button>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
+

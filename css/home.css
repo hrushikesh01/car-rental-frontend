@@ -1,0 +1,52 @@
+.hero {
+  height: 100vh;
+  position: relative;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  position: absolute;
+  left: 80px;
+  bottom: 140px;
+}
+
+section {
+  padding: 100px 80px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1.2s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 40px;
+}
+
+.car-card img {
+  width: 100%;
+  transition: transform 1s ease;
+}
+.car-card:hover img {
+  transform: scale(1.06);
+}

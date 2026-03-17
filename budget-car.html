@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Budget Car Details</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/car-budget.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAV ================= -->
+<!-- ================= NAVBAR ================= -->
+  <nav class="main-navbar">
+    <div class="logo"><a href="index.html">DRIVE</a></div>
+    <ul class="nav-links">
+      <li><a href="budget.html" class="active">Budget</a></li>
+      <li><a href="premium.html">Premium</a></li>
+      <li><a href="luxury.html">Luxury</a></li>
+      <li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+<!-- ================= CAR DETAILS ================= -->
+<section class="car-wrapper">
+
+  <div class="car-layout">
+
+    <!-- LEFT IMAGE -->
+    <div class="car-image">
+      <img id="carImage" class="main-img" src="" alt="Car">
+    </div>
+
+    <!-- RIGHT DETAILS -->
+    <div class="car-details">
+      <h1 id="carName"></h1>
+      <p id="carPrice" class="price"></p>
+
+      <ul class="specs" id="carSpecs"></ul>
+
+      <a id="bookBtn" href="#" class="book-btn">
+        Book This Car
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="budget-reviews">
+  <h2>User Reviews</h2>
+
+  <div class="review">
+    ⭐⭐⭐⭐☆
+    <p>Very affordable and clean car. Smooth pickup.</p>
+    <span>— Ramesh, Hyderabad</span>
+  </div>
+
+  <div class="review">
+    ⭐⭐⭐⭐⭐
+    <p>Best budget rental service I’ve used.</p>
+    <span>— Anjali, Bengaluru</span>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="budget-about">
+  <h2>About Our Budget Cars</h2>
+  <p>
+    Our budget cars are carefully maintained, fuel-efficient,
+    and perfect for daily travel, city rides, and short trips.
+  </p>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="budget-footer">
+  <p>© 2026 Drive Rentals</p>
+  <p>Support: support@driverentals.com</p>
+</footer>
+
+<script src="js/budget-car.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Budget Cars</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/budget.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+  <nav class="main-navbar">
+    <div class="logo"><a href="index.html">DRIVE</a></div>
+    <ul class="nav-links">
+      <li><a href="budget.html" class="active">Budget</a></li>
+      <li><a href="premium.html">Premium</a></li>
+      <li><a href="luxury.html">Luxury</a></li>
+      <li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+<section class="budget-cars">
+  <h2>All Budget Cars</h2>
+
+  <div class="budget-grid">
+
+    <!-- Repeat pattern for all 10 -->
+    <script>
+      const cars = [
+        ["swift","Swift","₹2,199 / day"],
+        ["nexon","Nexon","₹3,499 / day"],
+        ["punch","Punch","₹2,999 / day"],
+        ["xuv700","XUV700","₹4,999 / day"],
+        ["xuv300","XUV300","₹6,999 / day"],
+        ["mghector","MG Hector Plus","₹5,999 / day"],
+        ["innova","Innova Crysta","₹6,499 / day"],
+        ["thar","Thar","₹5,499 / day"],
+        ["hilux","Hilux","₹6,999 / day"],
+        ["creta","Creta","₹7,499 / day"]
+      ];
+
+      document.write(
+        cars.map(c => `
+          <div class="budget-card">
+            <img src="media/cars/budget/${c[0]}-side.jpg">
+            <h3>${c[1]}</h3>
+            <p class="price">${c[2]}</p>
+            <a href="budget-car.html?car=${c[0]}"
+               class="book-btn"
+               data-car="${c[0]}"
+               data-type="budget">
+               View
+            </a>
+          </div>
+        `).join("")
+      );
+    </script>
+
+  </div>
+</section>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
+

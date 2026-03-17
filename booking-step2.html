@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirm Booking</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/booking.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<section class="booking-wrapper">
+
+  <h1>Confirm Your Booking</h1>
+
+  <!-- CAR INFO -->
+  <p><strong>Car:</strong> <span id="carName"></span></p>
+  <p><strong>Category:</strong> <span id="carType"></span></p>
+
+  <!-- DATE INFO -->
+  <p><strong>Pickup Date:</strong> <span id="pickup"></span></p>
+  <p><strong>Drop Date:</strong> <span id="drop"></span></p>
+  <p><strong>Total Days:</strong> <span id="days"></span></p>
+
+  <!-- PRICE INFO -->
+  <p><strong>Price / Day:</strong> ₹<span id="pricePerDay"></span></p>
+  <p><strong>Delivery Charge:</strong> ₹<span id="delivery"></span></p>
+
+  <hr>
+
+  <p class="total-line">
+    <strong>Total Amount:</strong> ₹<span id="total"></span>
+  </p>
+
+  <!-- PAYMENT INFO -->
+  <p class="note">
+    Payment will be collected at <strong>pickup / delivery</strong>.
+    No online payment required.
+  </p>
+
+  <a href="booking-success.html" id="confirmBtn" class="next-btn">
+    Confirm Booking
+  </a>
+
+</section>
+
+<script src="js/confirm.js"></script>
+</body>
+</html>
+

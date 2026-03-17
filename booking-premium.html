@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Premium Booking</title>
+
+  <!-- Common -->
+  <link rel="stylesheet" href="css/reset.css">
+
+  <!-- Premium Booking Theme -->
+  <link rel="stylesheet" href="css/booking-premium.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+  <nav class="main-navbar">
+    <div class="logo"><a href="index.html">DRIVE</a></div>
+    <ul class="nav-links">
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="premium.html" class="active">Premium</a></li>
+      <li><a href="luxury.html">Luxury</a></li>
+      <li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+<!-- ================= BOOKING ================= -->
+<section class="booking-wrapper">
+
+  <h1>Confirm Your Premium Booking</h1>
+
+  <!-- CAR SUMMARY -->
+  <div class="booking-card">
+    <h2 id="carName">Car</h2>
+    <p id="carPrice">₹0 / day</p>
+  </div>
+
+  <!-- DATE SELECTION -->
+  <div class="booking-form">
+
+    <div class="field">
+      <label>Pickup Date</label>
+      <input type="date" id="pickupDate">
+    </div>
+
+    <div class="field">
+      <label>Drop Date</label>
+      <input type="date" id="dropDate">
+    </div>
+
+  </div>
+
+  <!-- DELIVERY -->
+  <div class="delivery-box">
+    <h3>Delivery Option</h3>
+
+    <label>
+      <input type="radio" name="delivery" value="pickup" checked>
+      Pickup at showroom (Free)
+    </label>
+
+    <label>
+      <input type="radio" name="delivery" value="home">
+      Home delivery (+ ₹1,000)
+    </label>
+
+    <div id="addressBox" class="address-box">
+      <textarea id="address" placeholder="Enter delivery address"></textarea>
+    </div>
+  </div>
+
+  <!-- PRICE -->
+  <div class="price-box">
+    <p>Days: <span id="days">0</span></p>
+    <p>Total Amount: <strong id="total">₹0</strong></p>
+  </div>
+
+  <!-- CONFIRM -->
+  <button id="confirmBtn" class="confirm-btn">
+    Confirm Booking
+  </button>
+
+</section>
+
+<!-- ================= SCRIPT ================= -->
+<script src="js/api.js"></script>
+<script src="js/booking-premium.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
+

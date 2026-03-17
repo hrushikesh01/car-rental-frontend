@@ -1,0 +1,263 @@
+/* css/main.css */
+:root {
+  /* Global Modern Variables */
+  --bg-white: #ffffff;
+  --bg-offwhite: #f8fafc;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.05);
+
+  /* Theme Accents (Fallback defaults) */
+  --theme-primary: #0f172a;
+  --theme-secondary: #334155;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-offwhite);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* ================= THEMED NAVBAR ================= */
+.main-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.main-navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--theme-primary);
+  text-decoration: none;
+}
+
+.main-navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.main-navbar ul li a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.main-navbar ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--theme-primary);
+  transition: width 0.3s ease;
+}
+
+.main-navbar ul li a:hover,
+.main-navbar ul li a.active {
+  color: var(--theme-primary);
+}
+
+.main-navbar ul li a:hover::after,
+.main-navbar ul li a.active::after {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .main-navbar {
+    padding: 16px 30px;
+  }
+}
+
+
+/* ================= PAGE TRANSITION ================= */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: pageFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base button animations */
+button,
+.btn,
+.book-btn,
+.view-more-btn {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+button:hover,
+.btn:hover,
+.book-btn:hover,
+.view-more-btn:hover {
+  transform: translateY(-2px);
+}
+
+button:active,
+.btn:active,
+.book-btn:active,
+.view-more-btn:active {
+  transform: scale(0.96) translateY(0);
+}
+
+
+/* ================= MOBILE NAV FIXES ================= */
+@media (max-width: 650px) {
+  .main-navbar {
+    flex-direction: column;
+    padding: 12px;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .main-navbar ul {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-navbar ul li a {
+    font-size: 0.85rem;
+  }
+}
+
+/* NAVBAR SEARCH */
+/* ================= NAVBAR SEARCH ================= */
+
+.nav-right{
+display:flex;
+align-items:center;
+gap:25px;
+}
+
+/* SEARCH CONTAINER */
+
+.location-search{
+display:flex;
+align-items:center;
+gap:10px;
+flex:1;
+justify-content:center;
+}
+
+/* SEARCH INPUT */
+
+.location-search input{
+
+width:260px;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+border:1px solid rgba(0,0,0,0.1);
+
+background:#f8fafc;
+
+font-size:14px;
+
+outline:none;
+
+transition:all .3s;
+
+}
+
+/* INPUT FOCUS */
+
+.location-search input:focus{
+
+border-color:#2563eb;
+
+box-shadow:0 0 0 2px rgba(37,99,235,0.15);
+
+}
+
+/* SEARCH BUTTON */
+
+.location-search button{
+
+padding:8px 18px;
+
+border:none;
+
+border-radius:30px;
+
+background:#0f172a;
+
+color:white;
+
+cursor:pointer;
+
+font-size:13px;
+
+transition:.3s;
+
+}
+
+.location-search button:hover{
+
+background:#1e293b;
+
+transform:translateY(-1px);
+
+}
+
+/* ================= LUXURY NAVBAR ================= */
+
+.luxury-navbar{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+gap:20px;
+
+}
+.nav-right{
+display:flex;
+align-items:center;
+gap:25px;
+}

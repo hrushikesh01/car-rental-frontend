@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luxury Car | DRIVE</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/car-luxury.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+  <nav class="main-navbar">
+    <div class="logo"><a href="index.html">DRIVE</a></div>
+    <ul class="nav-links">
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="premium.html">Premium</a></li>
+      <li><a href="luxury.html" class="active">Luxury</a></li>
+      <li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+<!-- ================= HERO ================= -->
+<section class="luxury-car-hero">
+  <img
+    id="heroImage"
+    src=""
+    alt="Luxury car hero image"
+  >
+
+  <!-- BOOK NOW CUE -->
+  <div class="hero-book-cue">
+    <span>Book Now</span>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<section class="luxury-car-content">
+
+  <!-- LEFT INFO -->
+  <div class="luxury-info">
+    <span class="brand">DRIVE LUXURY</span>
+
+    <h1 id="carName">Loading...</h1>
+
+    <p id="carTagline" class="tagline">
+      Experience unmatched luxury and performance.
+    </p>
+
+    <ul id="carSpecs" class="specs">
+      <!-- JS injects specs -->
+    </ul>
+
+    <button id="bookBtn" class="book-btn">
+      Book This Car
+    </button>
+  </div>
+
+  <!-- RIGHT GALLERY -->
+  <div class="luxury-gallery">
+    <img
+      id="galleryImage"
+      src=""
+      alt="Luxury car gallery image"
+    >
+  </div>
+
+</section>
+
+<!-- ================= SCRIPT ================= -->
+<script src="js/luxury-car.js" defer></script>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
+

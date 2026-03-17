@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Account | DRIVE</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/account.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<section class="account-wrapper">
+
+  <div class="account-container">
+
+    <!-- ================= PROFILE ================= -->
+    <div class="card profile-card">
+
+      <div class="avatar">👤</div>
+
+      <div class="profile-info">
+        <h2 id="profileName">Drive User</h2>
+        <p id="userEmail">user@email.com</p>
+        <p id="userAddress">No address saved.</p>
+
+        <div class="profile-actions">
+          <button id="editProfileBtn" class="lux-btn">Edit Profile</button>
+          <button id="editAddressBtn" class="lux-btn outline">Edit Address</button>
+          <button id="logoutBtn" class="lux-btn danger">Logout</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= BOOKINGS ================= -->
+    <div class="card bookings-card">
+      <h3>Recent Bookings</h3>
+      <div id="bookingList"></div>
+    </div>
+
+    <!-- ================= OFFERS ================= -->
+    <div class="card offers-card">
+
+      <h3>Exclusive Offers</h3>
+
+      <div class="offers-container">
+        <div class="offers-track">
+
+          <div class="offer-card">🎁 ₹1500 Cashback on Luxury Cars</div>
+          <div class="offer-card">🚗 Free Delivery on Premium Rides</div>
+          <div class="offer-card">🔥 20% OFF on Weekend Rentals</div>
+          <div class="offer-card">💎 Flat ₹1000 OFF on First Booking</div>
+
+          <!-- duplicate for infinite scroll -->
+          <div class="offer-card">🎁 ₹1500 Cashback on Luxury Cars</div>
+          <div class="offer-card">🚗 Free Delivery on Premium Rides</div>
+          <div class="offer-card">🔥 20% OFF on Weekend Rentals</div>
+          <div class="offer-card">💎 Flat ₹1000 OFF on First Booking</div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= LOYALTY ================= -->
+    <div class="card loyalty-card">
+      <p id="loyaltyDiscount">Loading loyalty status...</p>
+    </div>
+
+  </div>
+
+</section>
+
+<script src="js/api.js"></script>
+<script src="js/account.js"></script>
+</body>
+</html>

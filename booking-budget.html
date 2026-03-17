@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Budget Car</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/booking-budget.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
+  <nav class="main-navbar">
+    <div class="logo"><a href="index.html">DRIVE</a></div>
+    <ul class="nav-links">
+      <li><a href="budget.html" class="active">Budget</a></li>
+      <li><a href="premium.html">Premium</a></li>
+      <li><a href="luxury.html">Luxury</a></li>
+      <li id="authLink"><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+<!-- ================= BOOKING SECTION ================= -->
+<section class="booking-wrapper">
+
+  <h1>Complete Your Booking</h1>
+  <p class="subtitle">Confirm your ride details below</p>
+
+  <div class="booking-layout">
+
+    <!-- ================= LEFT : CAR SUMMARY ================= -->
+    <div class="booking-car">
+
+      <img id="bookingCarImage" src="" alt="Selected Car">
+
+      <div class="car-info">
+        <h2 id="bookingCarName">Car Name</h2>
+        <p class="price" id="bookingCarPrice">₹0 / day</p>
+
+        <ul class="specs" id="bookingCarSpecs"></ul>
+      </div>
+
+    </div>
+
+    <!-- ================= RIGHT : BOOKING FORM ================= -->
+   
+    <form class="booking-form" id="bookingForm">
+
+      <!-- Removed "Your Details" Section -->
+
+      <h3>Booking Details</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Pickup Date</label>
+          <input type="date" id="pickupDate" required>
+        </div>
+
+        <div class="form-group">
+          <label>Drop Date</label>
+          <input type="date" id="dropDate" required>
+        </div>
+      </div>
+
+      <!-- DELIVERY OPTION -->
+      <div class="form-group">
+        <label>Delivery Option</label>
+
+        <div style="margin-top:8px;">
+          <input type="radio" name="delivery" value="0" checked>
+          Pickup at Showroom (Free)
+        </div>
+
+        <div style="margin-top:6px;">
+          <input type="radio" name="delivery" value="500">
+          Home Delivery (+ ₹500)
+        </div>
+      </div>
+
+      <hr style="margin:25px 0; opacity:0.2;">
+
+      <!-- TOTAL DISPLAY -->
+      <div class="form-group" style="font-size:16px;">
+        <p>Total Days: <strong id="totalDays">0</strong></p>
+        <p>Total Price: ₹<strong id="totalPrice">0</strong></p>
+      </div>
+
+      <button type="submit" class="confirm-btn">
+        Confirm Booking
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="budget-footer">
+  <p>© 2026 Drive Rentals</p>
+  <p>Support: support@driverentals.com</p>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/booking-budget.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

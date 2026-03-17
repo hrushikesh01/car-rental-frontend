@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Premium Car Details</title>
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/car-premium.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="premium-navbar">
+<div class="logo"><a href="index.html">DRIVE</a></div>
+
+<ul>
+<li><a href="budget.html">Budget</a></li>
+<li><a href="premium.html" class="active">Premium</a></li>
+<li><a href="luxury.html">Luxury</a></li>
+<li id="authLink"><a href="login.html">Login</a></li>
+</ul>
+</nav>
+
+
+<!-- CAR DETAIL -->
+<section class="premium-car-wrapper">
+
+<a class="back-btn" href="premium.html">← Back to Premium</a>
+
+<div class="premium-image">
+<img id="carImage" src="" alt="Premium Car">
+</div>
+
+<div class="premium-info">
+
+<h1 id="carName"></h1>
+<p id="carPrice" class="price"></p>
+
+<p class="tagline">
+Experience refined comfort, smooth performance, and premium driving confidence on every journey.
+</p>
+
+<ul id="carSpecs" class="specs"></ul>
+
+<a id="bookBtn" href="#" class="book-btn">Book This Car</a>
+
+</div>
+</section>
+
+
+<!-- REVIEWS -->
+<section class="premium-reviews">
+
+<h2>Customer Reviews</h2>
+
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>Excellent comfort and smooth ride. Worth every rupee.</p>
+<span>– Arjun, Bengaluru</span>
+</div>
+
+<div class="review">
+⭐⭐⭐⭐☆
+<p>Perfect for long trips and business travel.</p>
+<span>– Rohit, Mumbai</span>
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="premium-about">
+
+<h2>About Premium Cars</h2>
+
+<p>
+Our premium fleet is carefully curated to offer a balance of luxury, safety,
+and driving pleasure. Ideal for customers seeking comfort without going ultra-luxury.
+</p>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="premium-footer">
+
+<p>© 2026 Drive Rentals</p>
+<p>Premium Support: premium@driverentals.com</p>
+
+</footer>
+
+
+<script src="js/premium-car.js"></script>
+
+<script>
+const authLink = document.getElementById("authLink");
+
+if (localStorage.getItem("isLoggedIn") === "true") {
+
+authLink.innerHTML = `<a href="#" id="logoutBtn">Logout</a>`;
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+
+localStorage.removeItem("isLoggedIn");
+window.location.reload();
+
+});
+
+} else {
+
+authLink.innerHTML = `<a href="login.html">Login</a>`;
+
+}
+</script>
+
+</body>
+</html>

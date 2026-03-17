@@ -1,0 +1,641 @@
+/* ================= ROOT ================= */
+
+:root{
+
+--bg-main:#ffffff;
+--bg-soft:#f8fafc;
+--bg-card:#ffffff;
+
+--text-main:#111827;
+--text-muted:#6b7280;
+
+--accent:#f97316;      /* luxury orange */
+--accent-soft:rgba(249,115,22,.15);
+--accent-glow:rgba(249,115,22,.35);
+
+}
+
+/* ================= BODY ================= */
+
+body{
+
+background:
+radial-gradient(circle at 20% 20%, rgba(249,115,22,.06), transparent 40%),
+linear-gradient(180deg,#ffffff,#f8fafc);
+
+color:var(--text-main);
+font-family:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+padding-top:90px;
+overflow-x:hidden;
+
+}
+
+/* ================= NAVBAR ================= */
+
+.luxury-navbar{
+
+position:fixed;
+top:0;
+left:0;
+right:0;
+
+height:70px;
+
+padding:0 70px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+background:#ffffff;
+
+border-bottom:1px solid rgba(0,0,0,.06);
+
+z-index:100;
+
+}
+
+.luxury-navbar .logo a{
+
+font-weight:600;
+letter-spacing:3px;
+
+color:var(--accent);
+text-decoration:none;
+
+}
+
+.luxury-navbar ul{
+
+display:flex;
+gap:34px;
+
+list-style:none;
+
+}
+
+.luxury-navbar a{
+
+text-decoration:none;
+
+color:var(--text-muted);
+
+font-size:.9rem;
+
+transition:.3s;
+
+}
+
+.luxury-navbar a:hover,
+.luxury-navbar a.active{
+
+color:var(--accent);
+
+}
+
+/* ================= HERO ================= */
+
+.luxury-hero{
+
+padding:40px 0 100px;
+
+display:flex;
+justify-content:center;
+
+}
+
+.video-wrapper{
+
+width:88%;
+max-width:1400px;
+
+height:78vh;
+
+border-radius:40px;
+overflow:hidden;
+
+position:relative;
+
+box-shadow:0 30px 80px rgba(0,0,0,.12);
+
+}
+
+.video-wrapper video{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+filter:brightness(.85);
+
+}
+
+.video-wrapper::after{
+
+content:"";
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+to top,
+rgba(0,0,0,.45),
+rgba(0,0,0,.1)
+);
+
+}
+
+/* ================= HERO TEXT ================= */
+
+.hero-text{
+
+position:absolute;
+inset:0;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+z-index:2;
+
+color:white;
+
+}
+
+.hero-text .eyebrow{
+
+letter-spacing:5px;
+font-size:.75rem;
+
+color:var(--accent);
+
+margin-bottom:20px;
+
+}
+
+.hero-text h1{
+
+font-size:clamp(3rem,6vw,5rem);
+font-weight:500;
+
+margin-bottom:16px;
+
+}
+
+.hero-text p{
+
+font-size:1rem;
+opacity:.85;
+
+}
+
+.scroll-hint{
+
+margin-top:40px;
+
+font-size:.75rem;
+letter-spacing:2px;
+
+opacity:.8;
+
+}
+
+/* ================= WELCOME ================= */
+
+.luxury-welcome{
+
+padding:120px 22%;
+
+text-align:center;
+
+
+background:linear-gradient(
+135deg,
+#f97316,
+#fb923c
+);
+
+}
+
+.luxury-caption{
+
+font-size:.7rem;
+
+letter-spacing:4px;
+
+color:#ffffff;
+
+margin-bottom:22px;
+
+}
+
+.luxury-welcome h2{
+
+font-size:2.2rem;
+
+margin-bottom:16px;
+
+}
+
+.luxury-divider{
+
+width:80px;
+height:2px;
+
+margin:26px auto;
+
+background:#ffffff;
+
+opacity:.4;
+
+}
+
+.luxury-welcome p{
+
+color:#ffffff;
+line-height:1.9;
+
+}
+
+/* ================= FEATURED ================= */
+
+.luxury-featured{
+
+padding:80px 10% 120px;
+
+background:#ffffff;
+
+}
+
+.luxury-featured h2{
+
+text-align:center;
+
+font-size:2.2rem;
+
+margin-bottom:60px;
+
+}
+
+/* ================= GRID ================= */
+
+.luxury-grid{
+
+display:grid;
+
+grid-template-columns:0.8fr 0.4fr;
+
+gap:32px;
+
+}
+
+/* ================= CARD ================= */
+
+.luxury-card{
+
+text-align:center;
+
+background:var(--bg-card);
+
+border-radius:20px;
+
+padding:24px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.4s;
+
+}
+
+.luxury-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.15),
+0 0 20px rgba(249,115,22,.18);
+
+}
+
+.luxury-card img{
+
+width:100%;
+
+aspect-ratio:16/9;
+
+object-fit:cover;
+
+border-radius:14px;
+
+margin-bottom:10px;
+
+}
+
+.luxury-card h3{
+
+margin-bottom:12px;
+
+font-weight:600;
+
+}
+
+.luxury-card a{
+
+display:inline-block;
+
+margin-top:6px;
+
+padding:10px 20px;
+
+border-radius:20px;
+
+background:var(--accent);
+
+color:#fff;
+
+text-decoration:none;
+
+font-size:.85rem;
+
+transition:.3s;
+
+}
+
+.luxury-card a:hover{
+
+background:#bdb0a9;
+
+}
+
+/* ================= MAIN CARD ================= */
+
+.luxury-main{
+
+grid-row:span 2;
+
+}
+
+.luxury-main img{
+
+height:80%;
+
+min-height:420px;
+
+}
+
+/* ================= VIEW ALL ================= */
+
+.view-all{
+
+margin-top:80px;
+
+text-align:center;
+
+}
+
+.view-all a{
+
+padding:14px 40px;
+
+border-radius:30px;
+
+background:var(--accent);
+
+color:#fff;
+
+text-decoration:none;
+
+}
+
+.view-all a:hover{
+
+background:#ea580c;
+
+}
+
+/* ================= ABOUT ================= */
+
+.luxury-about{
+
+padding:140px 22%;
+
+text-align:center;
+
+background:#ea580c;
+
+}
+
+.luxury-about p{
+
+color:#ffffff;
+line-height:2;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.luxury-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.luxury-main{
+
+grid-row:auto;
+
+}
+
+.luxury-welcome,
+.luxury-about{
+
+padding:100px 10%;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-text h1{
+
+font-size:2.6rem;
+
+}
+
+.luxury-navbar{
+
+padding:0 30px;
+
+}
+
+}
+
+/* ================= NAVBAR SEARCH ================= */
+
+.location-search{
+display:flex;
+align-items:center;
+gap:10px;
+margin:0 20px;
+}
+
+.location-search input{
+
+width:240px;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+border:1px solid rgba(0,0,0,0.12);
+
+background:#f1f5f9;
+
+font-size:14px;
+
+outline:none;
+
+transition:all .25s ease;
+
+}
+
+/* focus effect */
+
+.location-search input:focus{
+
+border-color:#ff6a00;
+
+box-shadow:0 0 0 2px rgba(255,106,0,0.15);
+
+}
+
+/* search button */
+
+.location-search button{
+
+padding:8px 18px;
+
+border:none;
+
+border-radius:30px;
+
+background:#0f172a;
+
+color:#ffffff;
+
+font-size:13px;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.location-search button:hover{
+
+background:#1e293b;
+
+transform:translateY(-1px);
+
+}
+/* ================= FLOAT CONTACT ================= */
+
+.contact-float{
+
+position:fixed;
+
+right:20px;
+bottom:30px;
+
+display:flex;
+flex-direction:column;
+
+gap:14px;
+
+z-index:9999;
+
+}
+
+/* CONTACT BUTTON */
+
+.contact-btn{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+padding:10px 14px;
+
+border-radius:30px;
+
+background:#ffffff;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+text-decoration:none;
+
+font-size:14px;
+
+color:#111827;
+
+transition:.3s;
+
+}
+
+/* ICON */
+
+.contact-btn img{
+
+width:20px;
+height:20px;
+
+}
+
+/* TEXT */
+
+.contact-btn span{
+
+font-weight:500;
+
+}
+
+/* WHATSAPP */
+
+.contact-btn.whatsapp{
+
+border-left:4px solid #25D366;
+
+}
+
+.contact-btn.whatsapp:hover{
+
+background:#25D366;
+color:#fff;
+
+transform:translateY(-2px);
+
+}
+
+/* CALL */
+
+.contact-btn.call{
+
+border-left:4px solid #2563eb;
+
+}
+
+.contact-btn.call:hover{
+
+background:#2563eb;
+color:#fff;
+
+transform:translateY(-2px);
+
+}
