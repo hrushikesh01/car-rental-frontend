@@ -2,8 +2,8 @@
 // The backend may run on 5000 or (if 5000 is busy) 5001, etc.
 // We auto-detect a working base URL and cache it in localStorage.
 
-// Local backend only
-const PROD_API_BASE_URL = "http://localhost:5000";
+// Render production backend URL
+const PROD_API_BASE_URL = "https://car-rental-backend-zksf.onrender.com";
 
 function buildApiCandidates() {
   const host = window.location.hostname || "localhost";
@@ -11,9 +11,13 @@ function buildApiCandidates() {
   const ports = Array.from({ length: 10 }, (_, i) => 5000 + i); // 5000-5009
 
   const urls = [PROD_API_BASE_URL];
+  // Add local candidates for dev fallback
   for (const h of hosts) {
     for (const p of ports) {
-      urls.push(`http://${h}:${p}`);
+      const localUrl = `http://${h}:${p}`;
+      if (localUrl !== PROD_API_BASE_URL) {
+        urls.push(localUrl);
+      }
     }
   }
   return urls;
