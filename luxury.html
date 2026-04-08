@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/luxury.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,30 +20,37 @@
 <body>
 
 <!-- ================= NAVBAR ================= -->
-<nav class="luxury-navbar">
+<nav class="main-navbar">
+  <button class="hamburger-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
   <!-- LOGO -->
   <div class="logo">
     <a href="index.html">DRIVE</a>
   </div>
 
-  <!-- LOCATION SEARCH -->
-  <div class="location-search">
-    <input 
-      type="text"
-      id="locationInput"
-      placeholder="Search your location"
-    >
-    <button>Search</button>
-  </div>
+  <div class="nav-right">
+    <!-- LOCATION SEARCH -->
+    <div class="location-search">
+      <input
+        type="text"
+        id="locationInput"
+        placeholder="Search your location"
+      >
+      <button>Search</button>
+    </div>
 
-  <!-- NAV LINKS -->
-  <ul class="nav-links">
-    <li><a href="budget.html">Budget</a></li>
-    <li><a href="premium.html">Premium</a></li>
-    <li><a href="luxury.html" class="active">Luxury</a></li>
-    <li id="authLink"><a href="login.html">Account</a></li>
-  </ul>
+    <!-- NAV LINKS -->
+    <ul class="nav-links">
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="premium.html">Premium</a></li>
+      <li><a href="luxury.html" class="active">Luxury</a></li>
+      <li id="authLink"><a href="login.html">Account</a></li>
+    </ul>
+  </div>
 
 </nav>
 
@@ -98,11 +106,11 @@
       </div>
       <!-- 1 -->
       <div class="luxury-card">
-        <img src="media/cars/luxury/porsche911-1.jpg"
-          data-images="media/cars/luxury/porsche911-1.jpg,media/cars/luxury/porsche911-2.jpg,media/cars/luxury/porsche911-3.jpg"
-          alt="Porsche 911">
-        <h3>Porsche 911</h3>
-        <a href="luxury-car.html?car=porsche911">View Car</a>
+        <img src="media/cars/luxury/evoque-1.jpg"
+          data-images="media/cars/luxury/evoque-1.jpg,media/cars/luxury/evoque-2.jpg,media/cars/luxury/evoque-3.jpg"
+          alt="Range Rover Evoque">
+        <h3>Range Rover Evoque</h3>
+        <a href="luxury-car.html?car=evoque">View Car</a>
       </div>
 
       <!-- 2 -->
@@ -115,12 +123,13 @@
       </div>
 
       <!-- 3 -->
+      
       <div class="luxury-card">
-        <img src="media/cars/luxury/evoque-1.jpg"
-          data-images="media/cars/luxury/evoque-1.jpg,media/cars/luxury/evoque-2.jpg,media/cars/luxury/evoque-3.jpg"
-          alt="Range Rover Evoque">
-        <h3>Range Rover Evoque</h3>
-        <a href="luxury-car.html?car=evoque">View Car</a>
+        <img src="media/cars/luxury/porsche911-1.jpg"
+          data-images="media/cars/luxury/porsche911-1.jpg,media/cars/luxury/porsche911-2.jpg,media/cars/luxury/porsche911-3.jpg"
+          alt="Porsche 911">
+        <h3>Porsche 911</h3>
+        <a href="luxury-car.html?car=porsche911">View Car</a>
       </div>
 
       <!-- 4 -->
@@ -155,13 +164,13 @@
     <footer class="site-footer">
   <p>© 2026 Drive Rentals</p>
   <p>Support: support@driverentals.com</p>
-  <p class="developer">Developed by <strong>Hrushikesh</strong></p>
+  <p class="developer">Developers: <strong>Hrushikesh , Akram, Datha Narayana</strong></p>
 </footer>
   </section>
 
   <script src="js/luxury.js"></script>
-
 <script src="js/auth.js"></script>
+<script src="js/main.js"></script>
 
 
 <!-- ================= CONTACT FLOAT ================= -->

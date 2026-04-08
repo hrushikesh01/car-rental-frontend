@@ -216,3 +216,27 @@ body {
   }
 
 }
+
+@media (max-width: 600px) {
+  .car-wrapper {
+    padding: 60px 16px;
+  }
+
+  .car-image {
+    padding: 18px;
+  }
+
+  .car-details h1 {
+    font-size: 1.9rem;
+  }
+
+  .car-details .price {
+    font-size: 1.45rem;
+  }
+
+  .budget-reviews,
+  .budget-about {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

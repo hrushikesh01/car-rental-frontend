@@ -93,3 +93,25 @@ input:focus {
   border: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 700px) {
+  .booking-wrapper {
+    padding: 90px 20px;
+  }
+
+  .booking-wrapper h1 {
+    font-size: 2rem;
+    margin-bottom: 28px;
+  }
+
+  .booking-form {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .confirm-btn {
+    width: 100%;
+    padding: 14px 18px;
+  }
+}

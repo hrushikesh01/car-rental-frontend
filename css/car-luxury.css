@@ -30,67 +30,48 @@ overflow-x:hidden;
 
 /* ================= NAVBAR ================= */
 
-.main-navbar{
+@media (min-width: 769px) {
+  .main-navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:70px;
+    padding:0 70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#ffffff;
+    border-bottom:1px solid rgba(0,0,0,.06);
+    z-index:100;
+  }
 
-position:fixed;
-top:0;
-left:0;
-right:0;
+  .main-navbar .logo a{
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:3px;
+    color:var(--accent);
+  }
 
-height:70px;
+  .main-navbar ul{
+    display:flex;
+    gap:32px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
 
-padding:0 70px;
+  .main-navbar a{
+    text-decoration:none;
+    color:var(--text-muted);
+    font-size:.9rem;
+    transition:.25s;
+  }
 
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-background:#ffffff;
-
-border-bottom:1px solid rgba(0,0,0,.06);
-
-z-index:100;
-
-}
-
-.main-navbar .logo a{
-
-text-decoration:none;
-
-font-weight:600;
-letter-spacing:3px;
-
-color:var(--accent);
-
-}
-
-.main-navbar ul{
-
-display:flex;
-gap:32px;
-
-list-style:none;
-margin:0;
-padding:0;
-
-}
-
-.main-navbar a{
-
-text-decoration:none;
-
-color:var(--text-muted);
-font-size:.9rem;
-
-transition:.25s;
-
-}
-
-.main-navbar a:hover,
-.main-navbar a.active{
-
-color:var(--accent);
-
+  .main-navbar a:hover,
+  .main-navbar a.active{
+    color:var(--accent);
+  }
 }
 
 /* ================= HERO ================= */
@@ -329,4 +310,26 @@ margin:0 auto;
 
 }
 
+}
+
+@media (max-width: 600px) {
+  /* Removed vertical nav overrides to favor side drawer */
+
+  .hero-book-cue {
+    display: none;
+  }
+
+  .luxury-car-content {
+    padding: 44px 16px 80px;
+    gap: 34px;
+  }
+
+  .specs {
+    grid-template-columns: 1fr;
+  }
+
+  .book-btn {
+    width: 100%;
+    text-align: center;
+  }
 }

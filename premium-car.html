@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Car Details</title>
 
 <link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/car-premium.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,15 +17,22 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="premium-navbar">
+<nav class="main-navbar">
+<button class="hamburger-btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 <div class="logo"><a href="index.html">DRIVE</a></div>
 
-<ul>
-<li><a href="budget.html">Budget</a></li>
-<li><a href="premium.html" class="active">Premium</a></li>
-<li><a href="luxury.html">Luxury</a></li>
-<li id="authLink"><a href="login.html">Login</a></li>
-</ul>
+<div class="nav-right">
+  <ul class="nav-links">
+    <li><a href="budget.html">Budget</a></li>
+    <li><a href="premium.html" class="active">Premium</a></li>
+    <li><a href="luxury.html">Luxury</a></li>
+    <li id="authLink"><a href="login.html">Login</a></li>
+  </ul>
+</div>
 </nav>
 
 
@@ -96,6 +105,8 @@ and driving pleasure. Ideal for customers seeking comfort without going ultra-lu
 
 
 <script src="js/premium-car.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/main.js"></script>
 
 <script>
 const authLink = document.getElementById("authLink");

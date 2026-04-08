@@ -80,6 +80,7 @@ document.getElementById("loginForm").addEventListener("submit", async e => {
     localStorage.setItem("authToken", data.token);
     localStorage.setItem("userEmail", data.user.email);
     localStorage.setItem("profileName", data.user.name || "Drive User");
+    localStorage.setItem("profileAvatar", data.user.avatar_url || data.user.avatar || "");
 
     // Welcome toast on next page (colorful popup)
     sessionStorage.setItem(
@@ -124,7 +125,7 @@ document.getElementById("registerForm").addEventListener("submit", async e => {
   try {
     await apiSignup(name, email, pass);
     document.querySelector('[data-tab="login"]').click();
-    showToast("Account created successfully. Please login to continue.", "success");
+    showToast("Account created. Please verify your email from inbox, then login.", "success");
   } catch (err) {
     const msg =
       err && err.message === "Failed to fetch"
@@ -145,6 +146,7 @@ window.onGoogleCredential = async function onGoogleCredential(response) {
     localStorage.setItem("authToken", data.token);
     localStorage.setItem("userEmail", data.user.email);
     localStorage.setItem("profileName", data.user.name || "Drive User");
+    localStorage.setItem("profileAvatar", data.user.avatar_url || data.user.avatar || "");
 
     sessionStorage.setItem(
       "pendingToast",
@@ -195,8 +197,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     const baseUrl = await resolveApiBaseUrl();
     const res = await fetch(`${baseUrl}/api/auth/google/client-id`);
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.message || "Google login not configured");
+    let data = null;
+    try {
+      data = await res.json();
+    } catch (e) {
+      // ignore parse errors
+    }
+
+    // If backend is not configured (or returns 500), don't break the whole page.
+    // Just keep Google button unavailable and allow email/password login.
+    if (!res.ok || !data || !data.clientId) {
+      container.innerHTML =
+        "<p style='color:#64748b;font-size:0.9rem;'>Google login is not available right now.</p>";
+      return;
+    }
 
     window.google.accounts.id.initialize({
       client_id: data.clientId,
@@ -214,6 +228,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   } catch (err) {
     container.innerHTML = "<p style='color:#64748b;font-size:0.9rem;'>Google login is not available right now.</p>";
-    showToast(err.message || "Google login is not available right now.", "error");
+    // Don't hard-fail on Google sign-in initialization errors.
   }
 });

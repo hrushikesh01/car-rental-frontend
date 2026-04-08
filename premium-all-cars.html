@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Premium Cars</title>
 
   <!-- Common styles -->
@@ -18,15 +19,21 @@
 <body>
 
 <!-- ================= NAVBAR ================= -->
-<!-- ================= NAVBAR ================= -->
   <nav class="main-navbar">
+    <button class="hamburger-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div class="logo"><a href="index.html">DRIVE</a></div>
-    <ul class="nav-links">
-      <li><a href="budget.html">Budget</a></li>
-      <li><a href="premium.html" class="active">Premium</a></li>
-      <li><a href="luxury.html">Luxury</a></li>
-      <li id="authLink"><a href="login.html">Login</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="budget.html">Budget</a></li>
+        <li><a href="premium.html" class="active">Premium</a></li>
+        <li><a href="luxury.html">Luxury</a></li>
+        <li id="authLink"><a href="login.html">Login</a></li>
+      </ul>
+    </div>
   </nav>
 
 <!-- ================= ALL PREMIUM CARS ================= -->
@@ -243,8 +250,8 @@
 <!-- ================= SCRIPTS ================= -->
 <script src="js/availability.js"></script>
 <script src="js/premium.js"></script>
-
 <script src="js/auth.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
 

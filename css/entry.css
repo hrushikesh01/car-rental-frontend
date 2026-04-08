@@ -1,7 +1,7 @@
 body {
   background: #000;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .entry-wrapper {
@@ -15,6 +15,9 @@ body {
   flex: 1;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* VIDEO / IMAGE */
@@ -39,7 +42,6 @@ body {
 .content {
   position: relative;
   z-index: 2;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,5 +88,35 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .entry-wrapper {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .entry-panel {
+    min-height: 33vh;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+
+  .enter-btn {
+    padding: 12px 28px;
   }
 }

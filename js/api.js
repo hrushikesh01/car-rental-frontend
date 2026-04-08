@@ -2,8 +2,8 @@
 // The backend may run on 5000 or (if 5000 is busy) 5001, etc.
 // We auto-detect a working base URL and cache it in localStorage.
 
-// Production backend (Railway)
-const PROD_API_BASE_URL = "https://carrentalbackend-production-ce94.up.railway.app";
+// Local backend only
+const PROD_API_BASE_URL = "http://localhost:5000";
 
 function buildApiCandidates() {
   const host = window.location.hostname || "localhost";
@@ -32,9 +32,10 @@ async function resolveApiBaseUrl() {
       const t = setTimeout(() => controller.abort(), 1500);
       const res = await fetch(`${baseUrl}/api/health`, {
         signal: controller.signal,
+        cache: "no-store",
       });
       clearTimeout(t);
-      if (res.ok) {
+      if (res.ok || res.status === 304) {
         localStorage.setItem("apiBaseUrl", baseUrl);
         return baseUrl;
       }
@@ -99,6 +100,28 @@ async function apiSignup(name, email, password) {
   });
 }
 
+async function apiVerifyEmail(token) {
+  return apiRequest(`/api/auth/verify-email?token=${encodeURIComponent(token)}`);
+}
+
+async function apiResendVerification(email) {
+  return apiRequest("/api/auth/resend-verification", {
+    method: "POST",
+    body: JSON.stringify({ email }),
+  });
+}
+
+async function apiGetMe() {
+  return apiRequest("/api/auth/me");
+}
+
+async function apiUpdateProfile(payload) {
+  return apiRequest("/api/auth/profile", {
+    method: "PATCH",
+    body: JSON.stringify(payload),
+  });
+}
+
 async function apiGoogleLogin(credential) {
   // Backend expects /auth/google-login with { token }
   return apiRequest("/auth/google-login", {
@@ -121,5 +144,11 @@ async function apiCreateBooking(payload) {
 
 async function apiGetMyBookings() {
   return apiRequest("/api/bookings/me");
+}
+
+async function apiCancelBooking(bookingId) {
+  return apiRequest(`/api/bookings/${encodeURIComponent(bookingId)}/cancel`, {
+    method: "DELETE",
+  });
 }
 

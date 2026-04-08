@@ -205,3 +205,25 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 600px) {
+  .booking-wrapper {
+    padding: 60px 16px;
+  }
+
+  .booking-wrapper h1 {
+    font-size: 2rem;
+  }
+
+  .booking-wrapper .subtitle {
+    margin-bottom: 28px;
+  }
+
+  .booking-car {
+    padding: 20px;
+  }
+
+  .booking-form {
+    padding: 22px;
+  }
+}

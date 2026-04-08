@@ -33,65 +33,56 @@ overflow-x:hidden;
 
 /* ================= NAVBAR ================= */
 
-.luxury-navbar{
+@media (min-width: 769px) {
+  .main-navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:70px;
+    padding:0 70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#ffffff;
+    border-bottom:1px solid rgba(0,0,0,.06);
+    z-index:100;
+  }
 
-position:fixed;
-top:0;
-left:0;
-right:0;
+  .main-navbar .nav-right{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    margin-left:auto;
+  }
 
-height:70px;
+  .main-navbar .logo a{
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:3px;
+    color:var(--accent);
+  }
 
-padding:0 70px;
+  .main-navbar ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
 
-display:flex;
-align-items:center;
-justify-content:space-between;
+  .main-navbar a{
+    text-decoration:none;
+    color:var(--text-muted);
+    font-size:.92rem;
+    font-weight:500;
+    transition:.25s;
+  }
 
-background:#ffffff;
-
-border-bottom:1px solid rgba(0,0,0,.06);
-
-z-index:100;
-
-}
-
-.luxury-navbar .logo a{
-
-font-weight:600;
-letter-spacing:3px;
-
-color:var(--accent);
-text-decoration:none;
-
-}
-
-.luxury-navbar ul{
-
-display:flex;
-gap:34px;
-
-list-style:none;
-
-}
-
-.luxury-navbar a{
-
-text-decoration:none;
-
-color:var(--text-muted);
-
-font-size:.9rem;
-
-transition:.3s;
-
-}
-
-.luxury-navbar a:hover,
-.luxury-navbar a.active{
-
-color:var(--accent);
-
+  .main-navbar a:hover,
+  .main-navbar a.active{
+    color:var(--accent);
+  }
 }
 
 /* ================= HERO ================= */
@@ -477,6 +468,20 @@ padding:0 30px;
 
 }
 
+@media (max-width: 700px) {
+  /* Removed vertical nav overrides to favor side drawer */
+
+  .location-search {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .location-search input {
+    width: min(360px, 70vw);
+  }
+}
+
 /* ================= NAVBAR SEARCH ================= */
 
 .location-search{
@@ -544,6 +549,14 @@ background:#1e293b;
 
 transform:translateY(-1px);
 
+}
+
+@media (max-width: 700px) {
+  .location-search{
+    margin:0;
+    width:100%;
+    justify-content:center;
+  }
 }
 /* ================= FLOAT CONTACT ================= */
 

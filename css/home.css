@@ -50,3 +50,32 @@ section {
 .car-card:hover img {
   transform: scale(1.06);
 }
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero-content {
+    left: 28px;
+    right: 28px;
+    bottom: 90px;
+  }
+
+  section {
+    padding: 80px 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 85vh;
+  }
+
+  .hero-content {
+    left: 16px;
+    right: 16px;
+    bottom: 70px;
+  }
+
+  section {
+    padding: 60px 16px;
+  }
+}

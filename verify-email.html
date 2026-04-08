@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Verification | DRIVE</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 0 0, #e0f2fe, #ffffff 45%),
+        linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 75%);
+      padding: 20px;
+    }
+    .verify-card {
+      width: min(560px, 100%);
+      background: #fff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 20px;
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.2);
+      padding: 30px;
+      text-align: center;
+      color: #0f172a;
+    }
+    .verify-status {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .verify-status.success {
+      background: rgba(34, 197, 94, 0.15);
+      color: #16a34a;
+    }
+    .verify-status.error {
+      background: rgba(239, 68, 68, 0.15);
+      color: #dc2626;
+    }
+    .verify-card h1 {
+      margin: 0 0 8px;
+      font-size: 1.9rem;
+    }
+    .verify-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.55;
+    }
+    .verify-actions {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .verify-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #0ea5e9, #1d4ed8);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="verify-card">
+    <div id="verifyStatus" class="verify-status">…</div>
+    <h1 id="verifyTitle">Verifying your email...</h1>
+    <p id="verifyMessage">Please wait while we verify your DRIVE account.</p>
+    <div class="verify-actions">
+      <a class="verify-btn" href="login.html">Go to Login</a>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/verify-email.js"></script>
+</body>
+</html>

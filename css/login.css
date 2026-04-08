@@ -256,3 +256,18 @@ button:hover {
   background: rgba(239, 68, 68, 0.18);
   color: #ef4444;
 }
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 40px 22px;
+  }
+
+  .login-card h1 {
+    font-size: 1.85rem;
+  }
+
+  .switch {
+    gap: 16px;
+  }
+}

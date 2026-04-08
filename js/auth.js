@@ -79,7 +79,56 @@ function consumePendingToast() {
   }
 }
 
+function ensureMobileNavStyles() {
+  if (document.getElementById("mobile-nav-style")) return;
+  const style = document.createElement("style");
+  style.id = "mobile-nav-style";
+  style.textContent = `
+    .nav-toggle{display:none;background:transparent;border:0;padding:8px;cursor:pointer}
+    .nav-toggle .bar{display:block;width:22px;height:2px;background:currentColor;margin:4px 0;border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+    @media (max-width: 768px){
+      .main-navbar,.luxury-navbar,.premium-navbar{padding:10px 14px !important;height:auto !important;flex-wrap:wrap;gap:10px}
+      .main-navbar .logo,.luxury-navbar .logo,.premium-navbar .logo{order:2;margin:0 auto}
+      .nav-toggle{display:inline-block;order:1;color:#0f172a}
+      .main-navbar .nav-panel,.luxury-navbar .nav-panel,.premium-navbar .nav-panel{display:none;order:3;width:100%;flex-direction:column;gap:10px;padding:8px 0}
+      .main-navbar.is-open .nav-panel,.luxury-navbar.is-open .nav-panel,.premium-navbar.is-open .nav-panel{display:flex}
+      .nav-panel .location-search{width:100%;margin:0;justify-content:flex-start}
+      .nav-panel .location-search input{width:min(420px,78vw)}
+      .nav-panel ul,.nav-panel.nav-links{display:flex;flex-wrap:wrap;gap:14px;justify-content:flex-start;align-items:center;margin:0;padding:0}
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+function initMobileNav() {
+  const nav = document.querySelector(".main-navbar, .luxury-navbar, .premium-navbar");
+  if (!nav || nav.querySelector(".nav-toggle")) return;
+  ensureMobileNavStyles();
+
+  const panel = nav.querySelector(".nav-right") || nav.querySelector(".nav-links") || nav.querySelector("ul");
+  if (!panel) return;
+  panel.classList.add("nav-panel");
+
+  const toggle = document.createElement("button");
+  toggle.className = "nav-toggle";
+  toggle.setAttribute("aria-label", "Toggle navigation");
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.innerHTML = '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
+  nav.insertBefore(toggle, nav.firstChild);
+
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  nav.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => nav.classList.remove("is-open"));
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  // initMobileNav();  // Disabled: Favoring global side-drawer in main.js
+
   const authLink = document.getElementById("authLink");
   if (authLink) {
     if (localStorage.getItem("isLoggedIn") === "true" && localStorage.getItem("authToken")) {

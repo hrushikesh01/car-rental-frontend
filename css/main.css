@@ -24,6 +24,7 @@ body {
   background-color: var(--bg-offwhite);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -147,10 +148,7 @@ button:active,
 /* ================= MOBILE NAV FIXES ================= */
 @media (max-width: 650px) {
   .main-navbar {
-    flex-direction: column;
-    padding: 12px;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 16px 20px;
   }
 
   .main-navbar ul {
@@ -187,7 +185,7 @@ justify-content:center;
 
 .location-search input{
 
-width:260px;
+width:min(260px, 60vw);
 
 padding:8px 16px;
 
@@ -203,6 +201,17 @@ outline:none;
 
 transition:all .3s;
 
+}
+
+@media (max-width: 650px) {
+  .location-search {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .location-search input {
+    width: min(340px, 70vw);
+  }
 }
 
 /* INPUT FOCUS */
@@ -260,4 +269,174 @@ gap:20px;
 display:flex;
 align-items:center;
 gap:25px;
+}
+/* ================= HAMBURGER BUTTON ================= */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  z-index: 1001;
+  order: 1;
+  flex-shrink: 0;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--theme-primary);
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ================= SIDE DRAWER ================= */
+.side-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.side-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 280px;
+  height: 100%;
+  background: var(--bg-white);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: left 0.3s ease;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-drawer.active {
+  left: 0;
+}
+
+.side-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.side-drawer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--theme-primary);
+}
+
+.side-drawer-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-drawer-nav {
+  flex: 1;
+}
+
+.side-drawer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-drawer-nav ul li {
+  margin-bottom: 20px;
+}
+
+.side-drawer-nav ul li a {
+  display: block;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.side-drawer-nav ul li a:hover,
+.side-drawer-nav ul li a.active {
+  color: var(--theme-primary);
+  background-color: var(--bg-offwhite);
+  padding-left: 16px;
+}
+
+/* ================= MOBILE NAVBAR ================= */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .main-navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 8px;
+  }
+
+  .main-navbar .logo {
+    flex: 1;
+    text-align: center;
+    order: 2;
+  }
+
+  .main-navbar .nav-right,
+  .main-navbar .nav-links {
+    display: none !important;
+  }
+}
+
+/* ================= DESKTOP NAVBAR ================= */
+@media (min-width: 769px) {
+  .hamburger-btn {
+    display: none !important;
+  }
 }

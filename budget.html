@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Budget Cars</title>
 
   <!-- Global reset & common styles -->
@@ -19,34 +20,27 @@
 
 <!-- ================= NAVBAR ================= -->
 <nav class="main-navbar">
-
+  <button class="hamburger-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
   <div class="logo">
     <a href="index.html">DRIVE</a>
   </div>
-
-  <!-- LOCATION SEARCH -->
-  <div class="location-search">
-
-    <input 
-      type="text"
-      id="locationInput"
-      placeholder="Search your location"
-    >
-
-    <button id="searchBtn">
-      Search
-    </button>
-
+  <div class="nav-right">
+    <div class="location-search">
+      <input type="text" id="locationInput" placeholder="Search your location" />
+      <button id="searchBtn">Search</button>
+    </div>
+    <ul class="nav-links">
+      <li><a href="budget.html">Budget</a></li>
+      <li><a href="premium.html">Premium</a></li>
+      <li><a href="luxury.html">Luxury</a></li>
+      <li id="authLink"><a href="login.html">Account</a></li>
+    </ul>
   </div>
-
-  <ul class="nav-links">
-    <li><a href="budget.html">Budget</a></li>
-    <li><a href="premium.html">Premium</a></li>
-    <li><a href="luxury.html">Luxury</a></li>
-    <li id="authLink"><a href="login.html">Account</a></li>
-  </ul>
-
-</nav>
 </nav>
 
 <!-- ================= HERO ================= -->
@@ -162,7 +156,7 @@
   <footer class="site-footer">
   <p>© 2026 Drive Rentals</p>
   <p>Support: support@driverentals.com</p>
-  <p class="developer">Developed by <strong>Hrushikesh</strong></p>
+  <p class="developer">Developers <strong>Hrushikesh,Akram,Datha Narayana</strong></p>
 </footer>
 </footer>
 
@@ -194,6 +188,8 @@
   </a>
 
 </div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
 
